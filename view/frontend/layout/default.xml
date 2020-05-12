@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @copyright Copyright © 2020 CreenSight. All rights reserved.
+ * @author CreenSight Development Team <magento@creensight.com>
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="store_language">
+            <action method="setTemplate" ifconfig="store_view_flags/general/enabled">
+                <argument name="template" xsi:type="string">CreenSight_StoreViewFlags::switch/languages.phtml</argument>
+            </action>
+        </referenceBlock>
+        <referenceBlock name="store.settings.language">
+            <action method="setTemplate" ifconfig="store_view_flags/general/enabled">
+                <argument name="template" xsi:type="string">CreenSight_StoreViewFlags::switch/languages.phtml</argument>
+            </action>
+        </referenceBlock>
+    </body>
+</page>

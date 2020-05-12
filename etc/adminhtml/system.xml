@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @copyright Copyright © 2020 CreenSight. All rights reserved.
+ * @author CreenSight Development Team <magento@creensight.com>
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="store_view_flags" translate="label" type="text" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Store View Flags</label>
+            <tab>creensight</tab>
+            <resource>CreenSight_StoreViewFlags::configuration</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General Configuration</label>
+                <field id="enabled" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="hide_store_name" translate="label comment" type="select" sortOrder="20" showInDefault="1" showInWebsite="0" showInStore="0" canRestore="1">
+                    <label>Hide Store Name</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+            </group>
+            <group id="flag" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Flag Configuration</label>
+                <field id="image" translate="label" type="image" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Image</label>
+                    <backend_model>Magento\Config\Model\Config\Backend\Image</backend_model>
+                    <upload_dir config="system/filesystem/media" scope_info="1">store_view_flags</upload_dir>
+                    <base_url type="media" scope_info="1">store_view_flags</base_url>
+                    <comment><![CDATA[Allowed file types: jpg, jpeg, gif, png]]></comment>
+                </field>
+                <field id="width" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Width</label>
+                    <comment><![CDATA[Flag width (in PX)]]></comment>
+                    <validate> validate-number required-number validate-greater-than-zero</validate>
+                </field>
+                <field id="height" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Height</label>
+                    <comment><![CDATA[Flag width (in PX)]]></comment>
+                    <validate> validate-number required-number validate-greater-than-zero</validate>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
